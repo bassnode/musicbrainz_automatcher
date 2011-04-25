@@ -109,7 +109,8 @@ class MusicbrainzAutomatcher
     value = block.call( key )
 
     # Store value in the cache
-    return @cache.write( key, value, :expires_at => Time.parse("18:00"))
+    @cache.write( key, value, :expires_at => Time.parse("18:00"))
+    value
   end
 
   # Clean up the artist name array
